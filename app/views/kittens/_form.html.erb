@@ -1,0 +1,16 @@
+<%= form_with(model: kitten) do |form| %>
+  <% if kitten.errors.any? %>
+    <ul>
+      <% kitten.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p><%= form.label :name %><br><%= form.text_field :name %></p>
+  <p><%= form.label :age %><br><%= form.number_field :age %></p>
+  <p><%= form.label :cuteness %><br><%= form.number_field :cuteness %></p>
+  <p><%= form.label :softness %><br><%= form.number_field :softness %></p>
+
+  <%= form.submit %>
+<% end %>
